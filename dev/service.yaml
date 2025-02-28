@@ -4,7 +4,7 @@ metadata:
   name: my-hello-world
   namespace: test5  # Ensure this matches your ArgoCD Application namespace
   labels:
-    app: my-hello-world
+    app.kubernetes.io/name: my-hello-world
 spec:
   type: NodePort
   selector:

@@ -8,9 +8,9 @@ spec:
       app: my-hello-world
   replicas: 2
   template:
-    metadata:
-      labels:
-        app: my-hello-world
+     metadata:
+    labels:
+      app.kubernetes.io/name: my-hello-world
     spec:
       containers:
       - name: my-hello-world
