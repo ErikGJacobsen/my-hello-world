@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-hello-world
+  name: My-hello-world
 spec:
   selector:
     matchLabels:
       app: my-hello-world
   replicas: 2
   template:
-     metadata:
+      metadata:
     labels:
       app.kubernetes.io/name: my-hello-world
     spec:
