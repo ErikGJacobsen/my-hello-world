@@ -8,7 +8,7 @@ metadata:
 spec:
   type: NodePort
   selector:
-    app.kubernetes.io/name: my-hello-world  # This must match your Deployment labels
+    app: my-hello-world  # This must match your Deployment labels
   ports:
     - name: http
       nodePort: 31814  # Exposes the service externally on this port
