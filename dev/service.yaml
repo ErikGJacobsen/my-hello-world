@@ -1,34 +1,17 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    field.cattle.io/publicEndpoints: >-
-      [{"port":31814,"protocol":"TCP","serviceName":"default:test8-nodeport","allNodes":true}]
-    field.cattle.io/targetWorkloadIds: '["default/test8"]'
-    management.cattle.io/ui-managed: 'true'
-  creationTimestamp: '2025-02-28T20:39:03Z'
-  name: test8-nodeport
-  namespace: default
-  resourceVersion: '2201329'
-  uid: 9e2a5357-3605-4111-a5d1-64c0425e9976
+  name: my-hello-world
+  namespace: test5  # Ensure this matches your ArgoCD Application namespace
+  labels:
+    app.kubernetes.io/name: my-hello-world
 spec:
-  clusterIP: 10.43.216.251
-  clusterIPs:
-    - 10.43.216.251
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-    - IPv4
-  ipFamilyPolicy: SingleStack
-  ports:
-    - name: my-hello-world
-      nodePort: 31814
-      port: 8080
-      protocol: TCP
-      targetPort: 8080
-  selector:
-    workload.user.cattle.io/workloadselector: apps.deployment-default-test8
-  sessionAffinity: None
   type: NodePort
-status:
-  loadBalancer: {}
+  selector:
+    app.kubernetes.io/name: my-hello-world  # This must match your Deployment labels
+  ports:
+    - name: http
+      nodePort: 31814  # Exposes the service externally on this port
+      port: 8080        # Internal service port
+      protocol: TCP
+      targetPort: 8080  # Port on the application pod

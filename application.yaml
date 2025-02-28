@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-hallo-world
+  name: my-hello-world  # Fixed typo
 spec:
   destination:
     namespace: test5
@@ -10,7 +10,6 @@ spec:
     path: dev
     repoURL: https://github.com/ErikGJacobsen/my-hello-world.git
     targetRevision: HEAD
-  sources: []
   project: default
   syncPolicy:
     syncOptions:
