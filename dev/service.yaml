@@ -3,14 +3,11 @@ kind: Service
 metadata:
   name: my-hello-world
   namespace: test5  # Ensure this matches your ArgoCD Application namespace
-  labels:
-    app.kubernetes.io/name: my-hello-world
 spec:
   type: NodePort
   selector:
     app: my-hello-world  # This must match your Deployment labels
   ports:
-    - name: http
       nodePort: 31814  # Exposes the service externally on this port
       port: 8080        # Internal service port
       protocol: TCP
