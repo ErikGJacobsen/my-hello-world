@@ -2,22 +2,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: my-hallo-world
-  namespace: Erik
 spec:
-  project: default
-
+  destination:
+    namespace: test5
+    server: https://kubernetes.default.svc
   source:
+    path: dev
     repoURL: https://github.com/ErikGJacobsen/my-hello-world.git
     targetRevision: HEAD
-    path: dev
-  destination: 
-    server: https://kubernetes.default.svc
-    namespace: Erik
-
+  sources: []
+  project: default
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
-
+      - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true
