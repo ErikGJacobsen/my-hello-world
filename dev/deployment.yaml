@@ -1,19 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: My-hello-world
+  name: my-hello-world
+  namespace: my-hello-world
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: my-hello-world
-  replicas: 2
   template:
     metadata:
       labels:
         app: my-hello-world
     spec:
       containers:
-      - name: my-hello-world
-        image: erikgjacobsen/my-hello-world:arm64
-        ports:
-        - containerPort: 8080
+        - name: my-hello-world
+          image: erikgjacobsen/my-hello-world:latest
+          ports:
+            - containerPort: 8080
