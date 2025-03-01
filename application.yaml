@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ErikGJacobsen/my-hello-world.git
     targetRevision: HEAD
-    path: manifests  # Ensure your YAML files are in a `manifests` folder in your repo
+    path: dev
   destination:
     server: https://kubernetes.default.svc
     namespace: my-hello-world
