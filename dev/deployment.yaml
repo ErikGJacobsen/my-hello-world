@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
         - name: my-hello-world
-          image: ghcr.io/erikgjacobsen/my-hello-world:arm64
+          image: ghcr.io/erikgjacobsen/my-hello-world:latest
           ports:
             - containerPort: 8080
