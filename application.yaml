@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/ErikGJacobsen/my-hello-world.git
     targetRevision: HEAD
-    path: dev
+    path: dev  # Updated to use the 'dev' folder
   destination:
     server: https://kubernetes.default.svc
     namespace: my-hello-world
